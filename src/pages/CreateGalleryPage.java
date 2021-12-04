@@ -33,6 +33,10 @@ public class CreateGalleryPage extends BasicPage {
 		return driver.findElement(By.xpath("//button[contains(text(), 'Submit')]"));
 	}
 	
+	public WebElement getRecycleBynButton() {
+		return driver.findElement(By.xpath("//*[@class='fas fa-trash']"));
+	}
+	
 	public void createGallery(String title, String description, String url){
 		this.getTitleIput().clear();
 		this.getTitleIput().sendKeys(title);

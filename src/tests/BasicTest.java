@@ -15,6 +15,7 @@ import helper.Helper;
 import pages.CreateGalleryPage;
 import pages.GalleryPage;
 import pages.LogInPage;
+import pages.MyGalleryPage;
 
 
 abstract class BasicTest {
@@ -25,6 +26,7 @@ abstract class BasicTest {
 	protected LogInPage loginPage;
 	protected GalleryPage galleryPage;
 	protected CreateGalleryPage createGalleryPage;
+	protected MyGalleryPage myGalleryPage;
 	
 	protected String username = "test@test.t";
 	protected String password = "12345678";
@@ -33,6 +35,10 @@ abstract class BasicTest {
 	protected String title = "Test Title";
 	protected String description = "Test Description";
 	protected String urlImage = "https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg";
+	
+	protected String newTitle = "New Test Title";
+	protected String newDescription = "New Test Description";
+	protected String newUrlImage = "https://mediawiki.ivao.aero/images/9/9e/NEW.jpg";
 	
 	@BeforeMethod
 	public void beforeMethod() {
@@ -47,6 +53,7 @@ abstract class BasicTest {
 		loginPage = new LogInPage(driver, wait);
 		galleryPage = new GalleryPage(driver, wait);
 		createGalleryPage = new CreateGalleryPage(driver, wait);
+		myGalleryPage = new MyGalleryPage(driver, wait);
 		
 	}
 	
