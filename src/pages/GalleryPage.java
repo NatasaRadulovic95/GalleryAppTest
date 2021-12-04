@@ -14,5 +14,14 @@ public class GalleryPage extends BasicPage {
 	public WebElement getTitle() {
 		return driver.findElement(By.xpath("//*[@class='title-style']"));
 	}
+	
+	public WebElement getCreateGalleryButton() {
+		return driver.findElement(By.xpath("//a[contains(text(), 'Create')]"));
+		
+	}
+	
+	public WebElement getMyGallery() {
+		return driver.findElement(By.xpath("//*[@class='grid']/div[1]"));
+	}
 
 }

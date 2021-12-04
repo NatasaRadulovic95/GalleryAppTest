@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.asserts.SoftAssert;
 
 import helper.Helper;
+import pages.CreateGalleryPage;
 import pages.GalleryPage;
 import pages.LogInPage;
 
@@ -23,9 +24,16 @@ abstract class BasicTest {
 	protected SoftAssert softAssert;
 	protected LogInPage loginPage;
 	protected GalleryPage galleryPage;
+	protected CreateGalleryPage createGalleryPage;
 	
 	protected String username = "test@test.t";
 	protected String password = "12345678";
+	
+	//info
+	protected String title = "Test Title";
+	protected String description = "Test Description";
+	protected String urlImage = "https://miro.medium.com/max/1400/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg";
+	
 	@BeforeMethod
 	public void beforeMethod() {
 
@@ -38,6 +46,7 @@ abstract class BasicTest {
 		softAssert = new SoftAssert();
 		loginPage = new LogInPage(driver, wait);
 		galleryPage = new GalleryPage(driver, wait);
+		createGalleryPage = new CreateGalleryPage(driver, wait);
 		
 	}
 	

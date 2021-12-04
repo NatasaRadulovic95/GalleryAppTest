@@ -25,7 +25,9 @@ public class LogInPage extends BasicPage {
 	}
 	
 	public void logIn(String email, String password) {
+		this.getEmailFiled().clear();
 		this.getEmailFiled().sendKeys(email);
+		this.getPasswordFiled().clear();
 		this.getPasswordFiled().sendKeys(password);
 		this.getSubmitButton().click();
 	}

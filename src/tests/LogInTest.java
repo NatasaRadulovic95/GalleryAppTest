@@ -10,5 +10,6 @@ public class LogInTest extends BasicTest {
 		driver.get("https://gallery-app.vivifyideas.com/login");
 		loginPage.logIn(username, password);
 		softAssert.assertTrue(galleryPage.getTitle().isDisplayed());
+		softAssert.assertAll();
 	}
 }
