@@ -11,5 +11,7 @@ public class LogInTest extends BasicTest {
 		loginPage.logIn(username, password);
 		softAssert.assertTrue(galleryPage.getTitle().isDisplayed());
 		softAssert.assertAll();
+		
+		
 	}
 }

@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,12 +26,21 @@ public class MyGalleryPage extends BasicPage {
 		return driver.findElement(By.xpath("//a[contains(text(), 'Test Title')]"));
 	}
 	
-	public WebElement getNewTitle() {
-		return driver.findElement(By.xpath("//*[@class='title-style']"));
+	public String getNewTitleText() {
+		return driver.findElement(By.xpath("//h1[@class='title-style']")).getText();
 	}
 	
 	public WebElement deleteGalleryButton() {
 		return driver.findElement(By.xpath("//*[@class='btn btn-custom']"));
+	}
+	
+	public WebElement logOutButton() {
+		return driver.findElement(By.xpath("//a[contains(text(), 'Logout')]"));
+	}
+	
+	public WebElement getLoginButton() {
+		return driver.findElement(By.xpath("//a[contains(text(), 'Login')]"));
+		
 	}
 	public void editGallery(String newTitle, String newDescription, String newImage) {
 		
@@ -48,8 +58,10 @@ public class MyGalleryPage extends BasicPage {
 		
 	}
 	
-	public void deleteGallery() {
+	public void deleteGallery() throws InterruptedException {
 		Helper.scrollToElementJS(this.deleteGalleryButton(), driver);
 		this.deleteGalleryButton().click();
+		Thread.sleep(500);
+		Keys.ENTER.getKeyFromUnicode(a);
 	}
 }
